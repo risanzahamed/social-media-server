@@ -28,7 +28,7 @@ async function run() {
         const postsCollection = client.db('socialMedia').collection('posts')
         const likeCollection = client.db('socialMedia').collection('like')
         const commentCollection = client.db('socialMedia').collection('comment')
-        const addProductCollection = client.db('usedCar').collection('addProduct')
+
 
         app.get('/users', async (req, res) => {
             const query = {}
@@ -149,13 +149,6 @@ async function run() {
             res.send(result)
         })
 
-
-
-        app.post('/add-product', async (req, res) => {
-            const product = req.body
-            const result = await addProductCollection.insertOne(product)
-            res.send(result)
-        })
 
 
 
